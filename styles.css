@@ -1,0 +1,246 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #cfc9c9;
+}
+
+header {
+    background-image: url('images/banner.jpg'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 2em 0;
+    height: 400px; /* Adjust height as needed */
+    position: relative;
+}
+
+header h1 {
+    position:relative;
+    text-align: center;
+    z-index: 2; /* Ensures the text is above the background */
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay for better text visibility */
+    z-index: 1;
+}
+
+nav {
+    background-color: #444;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #666;
+    border-radius: 5px;
+}
+
+main {
+    padding: 2em;
+    padding-bottom: 4em; /* Add padding to the bottom */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+.vehicle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.vehicle img {
+    max-width: 150px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 1em;
+}
+
+form input, form textarea {
+    padding: 0.5em;
+    margin-top: 0.5em;
+    border: 1px solid #ccc;
+}
+
+form button {
+    margin-top: 1em;
+    padding: 0.5em;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+.sliders-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.slider {
+    position: relative;
+    width: 30%;
+    overflow: hidden;
+    height: 300px; /* Adjust height to match your images */
+}
+
+.slider img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slider img.active {
+    display: block;
+}
+
+
+/* Container for all vehicles */
+.vehicles-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: space-around; /* Distribute space around the vehicle items */
+    gap: 20px; /* Space between the vehicle cards */
+    padding-top: 2em; /* Add padding at the top */
+}
+
+/* Styling each vehicle */
+.vehicle {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures content doesn't overflow the card */
+    width: 30%; /* Set a percentage width for each vehicle card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center; /* Center-align text */
+}
+
+.vehicle img {
+    width: 100%; /* Make image fill the width of the card */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for images */
+    margin-bottom: 15px;
+}
+
+.vehicle h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.vehicle p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.vehicle a {
+    text-decoration: none;
+    color: white;
+    background-color: #444;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.vehicle a:hover {
+    background-color: #666;
+}
+.vehicle-info {
+text-align: center;
+
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .vehicle {
+        width: 45%; /* Adjust width for smaller screens */
+        margin-bottom: 20px; /* Space between cards */
+    }
+}
+
+@media (max-width: 480px) {
+    .vehicle {
+        width: 100%; /* Full width for very small screens */
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    header {
+        height: 300px; /* Smaller height for smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .sliders-container {
+        flex-direction: column;
+    }
+
+    .slider {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 200px; /* Even smaller height for very small screens */
+    }
+}
